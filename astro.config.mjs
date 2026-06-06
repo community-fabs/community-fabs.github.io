@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Community Fabs',
+      pagination: false,
       social: [
         {
           icon: 'github',
