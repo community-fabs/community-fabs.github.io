@@ -1,6 +1,72 @@
 ---
 title: Getting Started
-description: Get started using community-fabs SDKs
+description: Get started using the community-fabs JS SDK
 ---
 
-This page is a work-in-progress. Please check back later
+This is a modern, dependency-free JavaScript SDK for PlayFab that supports Promises, ES Modules, tree-shaking, and custom request middleware.
+
+## Installation
+
+Install the SDK using npm:
+
+```bash
+npm install @community-fabs/playfab-sdk
+```
+
+## Initialize the SDK
+
+Create a PlayFab client by providing your title ID and developer secret key.
+
+```ts
+import { initializePlayFab } from '@community-fabs/playfab-sdk/core';
+
+const playfab = initializePlayFab({
+  titleId: 'YOUR_TITLE_ID',
+  developerSecretKey: 'YOUR_DEV_SECRET_KEY',
+});
+```
+
+## Create an API Client
+
+Import the API suite you want to use and create a client instance.
+
+```ts
+import getClientApi from '@community-fabs/playfab-sdk/client';
+
+const clientApi = getClientApi(playfab);
+```
+
+## Make Your First Request
+
+All SDK methods return Promises and can be used with `async/await`.
+
+```ts
+await clientApi.loginWithCustomID({
+  CustomId: 'test-custom-id',
+});
+```
+
+## Complete Example
+
+```ts
+import { initializePlayFab } from '@community-fabs/playfab-sdk/core';
+import getClientApi from '@community-fabs/playfab-sdk/client';
+
+const playfab = initializePlayFab({
+  titleId: 'YOUR_TITLE_ID',
+  developerSecretKey: 'YOUR_DEV_SECRET_KEY',
+});
+
+const clientApi = getClientApi(playfab);
+
+const result = await clientApi.loginWithCustomID({
+  CustomId: 'test-custom-id',
+});
+
+console.log(result);
+```
+
+## Next Steps
+
+* Learn how to configure [custom middleware](./middleware) for logging, retries, and request customization.
+* Explore the available PlayFab API suites.
