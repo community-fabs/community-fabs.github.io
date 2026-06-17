@@ -1,0 +1,58 @@
+---
+title: PlayFab + Colyseus + React
+description: Starter project using @community-fabs/playfab-sdk with Colyseus, React, and Vite.
+---
+
+[`playfab-colyseus-react-starter`](https://github.com/community-fabs/playfab-colyseus-react-starter) is a sample project showing how to combine `@community-fabs/playfab-sdk` with a Colyseus multiplayer server and a React + Vite client.
+
+## What this starter includes
+
+- PlayFab-backed auth integrated with Colyseus auth routes
+- A multiplayer room (`four_in_a_row`) with server-side command handlers
+- React client with `@colyseus/react` hooks for room lifecycle and state
+- Colyseus Playground and Monitor enabled in development
+- Vite + Colyseus plugin workflow for running server and client together
+
+## Quick start
+
+```bash
+git clone https://github.com/community-fabs/playfab-colyseus-react-starter.git
+cd playfab-colyseus-react-starter
+npm install
+npm run dev
+```
+
+### Environment setup
+
+The starter requires PlayFab credentials and JWT config in `.env`. For the full variable list and setup instructions, use the project's README:
+
+- [README environment setup](https://github.com/community-fabs/playfab-colyseus-react-starter#getting-started)
+
+## Architecture notes
+
+### Authentication flow
+
+1. The client signs in anonymously through Colyseus auth using a generated device ID.
+2. Server auth handlers call PlayFab APIs via `@community-fabs/playfab-sdk`.
+3. The authenticated player joins the `four_in_a_row` room.
+
+### Server structure
+
+- `src/server/index.ts`: Colyseus server wiring, routes, playground, monitor, and auth registration
+- `src/server/playfab/auth.ts`: PlayFab-backed auth settings for anonymous registration/session validation
+- `src/server/rooms/FourInARowRoom.ts`: Room lifecycle and gameplay state transitions
+- `src/server/commands/`: Command handlers for game actions and turn progression
+
+### Client structure
+
+- `src/client/App.tsx`: Auth bootstrapping, join/leave flow, room status UI
+- `src/client/GameArea.tsx`: Gameplay rendering and move interactions
+- `src/client/hooks/useDeviceId.ts`: Stable client device ID handling for anonymous login
+
+## When to use this starter
+
+Use this project when you want a practical baseline for:
+
+- PlayFab + Colyseus authentication and session flow
+- Real-time room-based multiplayer with React
+- A Vite-first local development experience for both server and client
