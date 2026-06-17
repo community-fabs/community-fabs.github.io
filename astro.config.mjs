@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightSidebarTopics from 'starlight-sidebar-topics'
+import starlightSidebarTopics from 'starlight-sidebar-topics';
+import starlightAutoSidebar from 'starlight-auto-sidebar';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
         }
       ],
       plugins: [
+        starlightAutoSidebar(),
         starlightSidebarTopics([
           {
             label: 'Overview',
