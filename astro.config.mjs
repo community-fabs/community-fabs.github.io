@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mermaid from 'astro-mermaid';
 import starlight from '@astrojs/starlight';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 import starlightAutoSidebar from 'starlight-auto-sidebar';
@@ -8,6 +9,9 @@ import starlightAutoSidebar from 'starlight-auto-sidebar';
 export default defineConfig({
   site: 'https://community-fabs.github.io',
   integrations: [
+    mermaid({
+      autoTheme: true
+    }),
     starlight({
       title: 'Community Fabs',
       pagination: false,
