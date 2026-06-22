@@ -33,9 +33,9 @@ export default defineConfig({
           },
           {
             label: 'Concepts',
-            link: '/concepts/todo',
+            link: '/concepts',
             icon: 'open-book',
-            items: ['concepts/todo'],
+            items: [{ autogenerate: { directory: 'concepts' } }],
           },
           {
             label: 'SDKs',
