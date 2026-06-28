@@ -15,6 +15,10 @@ export default defineConfig({
     starlight({
       title: 'Community Fabs',
       pagination: false,
+      logo: {
+        src: './src/assets/logo.svg'
+      },
+      favicon: './src/assets/logo.svg',
       social: [
         {
           icon: 'github',
