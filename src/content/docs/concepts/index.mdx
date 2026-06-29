@@ -1,0 +1,68 @@
+---
+title: Concepts
+description: Some concepts and design principles used in many of the Community Fabs SDKs.
+---
+
+Before diving into a specific SDK, it's worth understanding the ideas that tie the Community Fabs ecosystem together.
+
+Every Community Fabs SDK is built from the same core concepts. While each language embraces its own idioms and best practices, the underlying architecture remains consistent. Once you understand these concepts, moving between SDKs becomes straightforward.
+
+The goal isn't to make every SDK identical—it's to make them *predictable*.
+
+
+## Why Concepts Matter
+
+Community Fabs is more than a collection of generated clients.
+
+It's an effort to build a coherent developer experience across languages by establishing a shared vocabulary, common architecture, and consistent behavior.
+
+Rather than learning a new SDK every time you switch languages, you learn the concepts once and apply them everywhere.
+
+## What You'll Learn
+
+This section explains the foundational ideas behind Community Fabs, including topics such as:
+
+* [Game Servers](/concepts/game-servers/lifecycle)
+* More to come!
+
+Most topics can be read independently as a reference.
+
+## Design Principles
+
+Every Community Fabs project strives to follow a common set of principles.
+
+### Consistency
+
+Similar problems should have similar solutions.
+
+Whether you're using C#, TypeScript, Rust, Go, or another SDK, familiar concepts should behave in familiar ways.
+
+### Idiomatic APIs
+
+Community Fabs embraces the conventions of each language instead of forcing every SDK into the same shape.
+
+A TypeScript SDK should feel like TypeScript.
+
+A Rust SDK should feel like Rust.
+
+A C# SDK should feel like C#.
+
+Consistency comes from shared concepts—not identical syntax.
+
+### Generated Where Possible
+
+Large portions of each SDK are directly generated from PlayFab's [OpenAPI documentation](https://github.com/PlayFab/API_Specs).
+
+Generation provides consistency, reduces maintenance effort, and helps new API features become available across every supported language more quickly.
+
+### Human-Friendly
+
+Generated code shouldn't feel generated.
+
+The goal is to produce SDKs that are readable, discoverable, and pleasant to use while minimizing boilerplate and repetitive patterns.
+
+## Learn Once, Build Anywhere
+
+As Community Fabs grows, more SDKs, tools, and libraries will be added.
+
+The concepts in this section are intended to remain stable over time, providing a common foundation regardless of which language or framework you choose.

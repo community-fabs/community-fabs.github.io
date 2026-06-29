@@ -48,7 +48,7 @@ export default defineConfig({
           },
           {
             label: 'Concepts',
-            link: '/concepts/contributing',
+            link: '/concepts',
             icon: 'open-book',
             items: [{ autogenerate: { directory: 'concepts' } }],
           },
