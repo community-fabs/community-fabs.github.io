@@ -16,9 +16,17 @@ export default defineConfig({
       title: 'Community Fabs',
       pagination: false,
       logo: {
-        src: './src/assets/logo.svg'
+        src: './src/assets/header-logo.svg'
       },
-      favicon: './src/assets/logo.svg',
+      head: [
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: '/favicon.svg'
+          },
+        },
+      ],
       social: [
         {
           icon: 'github',
@@ -35,7 +43,7 @@ export default defineConfig({
           {
             label: 'Overview',
             link: '/',
-            icon: 'open-book',
+            icon: 'information',
             items: ['index'],
           },
           {
